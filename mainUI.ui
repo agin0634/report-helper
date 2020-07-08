@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>388</height>
+    <width>799</width>
+    <height>365</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>9</x>
       <y>9</y>
       <width>781</width>
-      <height>321</height>
+      <height>311</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -32,7 +32,7 @@
           <x>9</x>
           <y>9</y>
           <width>751</width>
-          <height>281</height>
+          <height>291</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -69,7 +69,7 @@
                 </size>
                </property>
                <property name="text">
-                <string>Excel Path</string>
+                <string>Source Path</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -80,7 +80,7 @@
               <widget class="QLineEdit" name="excellineEdit"/>
              </item>
              <item>
-              <widget class="QPushButton" name="excelbrowseButton">
+              <widget class="QPushButton" name="excelBrowseButton">
                <property name="text">
                 <string>Browse</string>
                </property>
@@ -134,7 +134,7 @@
               <widget class="QLineEdit" name="imagelineEdit"/>
              </item>
              <item>
-              <widget class="QPushButton" name="imagepushButton">
+              <widget class="QPushButton" name="imageBrowseButton">
                <property name="text">
                 <string>Browse</string>
                </property>
@@ -145,10 +145,110 @@
           </widget>
          </item>
          <item>
-          <widget class="QGroupBox" name="groupBox">
-           <property name="title">
-            <string>GroupBox</string>
+          <widget class="Line" name="line">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
            </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_3">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <widget class="QWidget" name="horizontalLayoutWidget_3">
+            <property name="geometry">
+             <rect>
+              <x>9</x>
+              <y>-1</y>
+              <width>731</width>
+              <height>141</height>
+             </rect>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QGroupBox" name="groupBox">
+               <property name="title">
+                <string>Properties</string>
+               </property>
+               <widget class="QWidget" name="verticalLayoutWidget_4">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>20</y>
+                  <width>221</width>
+                  <height>111</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_4">
+                 <item>
+                  <widget class="QWidget" name="widget" native="true"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="searchButton">
+                   <property name="text">
+                    <string>Search</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frame_5">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="groupBox_2">
+               <property name="title">
+                <string>Export</string>
+               </property>
+               <widget class="QWidget" name="verticalLayoutWidget_3">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>20</y>
+                  <width>221</width>
+                  <height>111</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_3">
+                 <item>
+                  <widget class="QPushButton" name="exportSoldButton">
+                   <property name="text">
+                    <string>Export Sold Report</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="exportUnsoldButton">
+                   <property name="text">
+                    <string>Export unsold Report</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
           </widget>
          </item>
         </layout>
@@ -163,7 +263,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>799</width>
      <height>21</height>
     </rect>
    </property>
@@ -173,7 +273,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>excelbrowseButton</sender>
+   <sender>excelBrowseButton</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
    <slot>eventExcelBrowseData()</slot>
@@ -189,7 +289,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>imagepushButton</sender>
+   <sender>imageBrowseButton</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
    <slot>eventImageBrowseData()</slot>
@@ -204,9 +304,60 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>exportSoldButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>eventExportSoldReport()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>713</x>
+     <y>231</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>793</x>
+     <y>234</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>exportUnsoldButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>eventExportUnsoldReport()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>703</x>
+     <y>275</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>791</x>
+     <y>286</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>searchButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>eventSearch()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>306</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>306</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>eventExcelBrowseData()</slot>
   <slot>eventImageBrowseData()</slot>
+  <slot>eventExportSoldReport()</slot>
+  <slot>eventExportUnsoldReport()</slot>
+  <slot>eventSearch()</slot>
  </slots>
 </ui>

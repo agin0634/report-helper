@@ -1,14 +1,13 @@
 import xlsxwriter
-import xlrd
 import os
 import sys
 if hasattr(sys, 'frozen'):
     os.environ['PATH'] = sys._MEIPASS + ";" + os.environ['PATH']
 from openpyxl import load_workbook
-from openpyxl import Workbook
 from mainUI import Ui_MainWindow
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from time import sleep
 
 class App():
     def readFile(self,file):
@@ -68,6 +67,7 @@ class App():
     def exportSoldReport(self):
         if self.bIsSearchComplete:
             try:
+                self.printProgressBar(self, 0, len(self.content), prefix = 'Progress:', suffix = 'Complete', length = 50)
                 wb = xlsxwriter.Workbook('Sold Report.xlsx')
                 ws = wb.add_worksheet()
                 ws.set_column('B:B', 24)
@@ -85,6 +85,10 @@ class App():
                             ws.write(i,index,self.content[i][index])
                     else:
                         ws.write(i,index,self.content[i][index])
+                    
+                    sleep(0.1)
+                    self.printProgressBar(self, i + 1, len(self.content), prefix = 'Progress:', suffix = 'Complete', length = 50) 
+
                 wb.close()
                 print("Sold report export complete.")
             except:
@@ -95,6 +99,7 @@ class App():
     def exportUnsoldReport(self):
         if self.bIsSearchComplete:
             try:
+                self.printProgressBar(self, 0, len(self.unsoldcontent), prefix = 'Progress:', suffix = 'Complete', length = 50)
                 wb = xlsxwriter.Workbook('Unsold Report.xlsx')
                 ws = wb.add_worksheet()
                 ws.set_column('B:B', 18.43)
@@ -106,12 +111,25 @@ class App():
                     if self.unsoldcontent[i][index].endswith('.png') or self.unsoldcontent[i][index].endswith('.jpg'):
                         ws.set_row(i,102)
                         ws.insert_image(i,index,self.unsoldcontent[i][index], {'x_scale':0.075, 'y_scale':0.075, 'object_position':3})
+
+                    sleep(0.1)
+                    self.printProgressBar(self, i + 1, len(self.unsoldcontent), prefix = 'Progress:', suffix = 'Complete', length = 50)
+                
                 wb.close()
                 print("Unsold report export complete.")
             except:
                 print("Unsold report export ERROR.")
         else:
             print("Please search images first.")
+    
+    def printProgressBar (self, iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█'):
+        percent = ("{0:." + str(decimals) + "f}").format(100 * (iteration / float(total)))  
+        filledLength = int(length * iteration // total)  
+        bar = fill * filledLength + '-' * (length - filledLength)  
+        print('\r%s |%s| %s%% %s' % (prefix, bar, percent, suffix), end = '\r')  
+        # Print New Line on Complete  
+        if iteration == total:   
+            print()  
     
 class AppWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):

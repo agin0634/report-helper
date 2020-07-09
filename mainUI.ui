@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>799</width>
+    <width>805</width>
     <height>365</height>
    </rect>
   </property>
@@ -25,64 +25,142 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QWidget" name="widget_2" native="true">
-       <widget class="QWidget" name="verticalLayoutWidget_2">
+      <widget class="QWidget" name="widget" native="true">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>60</height>
+        </size>
+       </property>
+       <widget class="QWidget" name="horizontalLayoutWidget">
         <property name="geometry">
          <rect>
-          <x>9</x>
-          <y>9</y>
-          <width>751</width>
-          <height>291</height>
+          <x>10</x>
+          <y>11</y>
+          <width>761</width>
+          <height>41</height>
          </rect>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
+        <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QFrame" name="frame">
-           <property name="maximumSize">
+          <widget class="QLabel" name="label">
+           <property name="minimumSize">
             <size>
-             <width>16777215</width>
-             <height>60</height>
+             <width>100</width>
+             <height>0</height>
             </size>
            </property>
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
+           <property name="text">
+            <string>Source Path</string>
            </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
            </property>
-           <widget class="QWidget" name="horizontalLayoutWidget">
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="excellineEdit"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="excelBrowseButton">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="widget_2" native="true">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>60</height>
+        </size>
+       </property>
+       <widget class="QWidget" name="horizontalLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>761</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Image Path</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="imagelineEdit"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="imageBrowseButton">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="widget_3" native="true">
+       <widget class="QWidget" name="horizontalLayoutWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>761</width>
+          <height>141</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QGroupBox" name="groupBox">
+           <property name="title">
+            <string>Properties</string>
+           </property>
+           <widget class="QWidget" name="verticalLayoutWidget_4">
             <property name="geometry">
              <rect>
               <x>10</x>
-              <y>11</y>
-              <width>731</width>
-              <height>41</height>
+              <y>20</y>
+              <width>221</width>
+              <height>111</height>
              </rect>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout">
+            <layout class="QVBoxLayout" name="verticalLayout_4">
              <item>
-              <widget class="QLabel" name="label">
-               <property name="minimumSize">
-                <size>
-                 <width>100</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>Source Path</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
+              <widget class="QWidget" name="widget" native="true"/>
              </item>
              <item>
-              <widget class="QLineEdit" name="excellineEdit"/>
-             </item>
-             <item>
-              <widget class="QPushButton" name="excelBrowseButton">
+              <widget class="QPushButton" name="searchButton">
                <property name="text">
-                <string>Browse</string>
+                <string>Search</string>
                </property>
               </widget>
              </item>
@@ -91,11 +169,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QFrame" name="frame_2">
-           <property name="maximumSize">
+          <widget class="QFrame" name="frame_5">
+           <property name="minimumSize">
             <size>
-             <width>16777215</width>
-             <height>60</height>
+             <width>0</width>
+             <height>0</height>
             </size>
            </property>
            <property name="frameShape">
@@ -104,147 +182,35 @@
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <widget class="QWidget" name="horizontalLayoutWidget_2">
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="title">
+            <string>Export</string>
+           </property>
+           <widget class="QWidget" name="verticalLayoutWidget_3">
             <property name="geometry">
              <rect>
               <x>10</x>
-              <y>0</y>
-              <width>731</width>
-              <height>41</height>
+              <y>20</y>
+              <width>221</width>
+              <height>111</height>
              </rect>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <layout class="QVBoxLayout" name="verticalLayout_3">
              <item>
-              <widget class="QLabel" name="label_2">
-               <property name="minimumSize">
-                <size>
-                 <width>100</width>
-                 <height>0</height>
-                </size>
-               </property>
+              <widget class="QPushButton" name="exportSoldButton">
                <property name="text">
-                <string>Image Path</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
+                <string>Export Sold Report</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="imagelineEdit"/>
-             </item>
-             <item>
-              <widget class="QPushButton" name="imageBrowseButton">
+              <widget class="QPushButton" name="exportUnsoldButton">
                <property name="text">
-                <string>Browse</string>
+                <string>Export unsold Report</string>
                </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </widget>
-         </item>
-         <item>
-          <widget class="Line" name="line">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QFrame" name="frame_3">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <widget class="QWidget" name="horizontalLayoutWidget_3">
-            <property name="geometry">
-             <rect>
-              <x>9</x>
-              <y>-1</y>
-              <width>731</width>
-              <height>141</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_3">
-             <item>
-              <widget class="QGroupBox" name="groupBox">
-               <property name="title">
-                <string>Properties</string>
-               </property>
-               <widget class="QWidget" name="verticalLayoutWidget_4">
-                <property name="geometry">
-                 <rect>
-                  <x>10</x>
-                  <y>20</y>
-                  <width>221</width>
-                  <height>111</height>
-                 </rect>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_4">
-                 <item>
-                  <widget class="QWidget" name="widget" native="true"/>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="searchButton">
-                   <property name="text">
-                    <string>Search</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </widget>
-             </item>
-             <item>
-              <widget class="QFrame" name="frame_5">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="groupBox_2">
-               <property name="title">
-                <string>Export</string>
-               </property>
-               <widget class="QWidget" name="verticalLayoutWidget_3">
-                <property name="geometry">
-                 <rect>
-                  <x>10</x>
-                  <y>20</y>
-                  <width>221</width>
-                  <height>111</height>
-                 </rect>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_3">
-                 <item>
-                  <widget class="QPushButton" name="exportSoldButton">
-                   <property name="text">
-                    <string>Export Sold Report</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="exportUnsoldButton">
-                   <property name="text">
-                    <string>Export unsold Report</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
               </widget>
              </item>
             </layout>
@@ -263,7 +229,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>799</width>
+     <width>805</width>
      <height>21</height>
     </rect>
    </property>
@@ -272,38 +238,6 @@
  </widget>
  <resources/>
  <connections>
-  <connection>
-   <sender>excelBrowseButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>eventExcelBrowseData()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>732</x>
-     <y>80</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>795</x>
-     <y>99</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>imageBrowseButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>eventImageBrowseData()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>740</x>
-     <y>127</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>792</x>
-     <y>140</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>exportSoldButton</sender>
    <signal>clicked()</signal>
@@ -349,6 +283,38 @@
     <hint type="destinationlabel">
      <x>7</x>
      <y>306</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>excelBrowseButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>eventExcelBrowseData()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>757</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>791</x>
+     <y>66</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>imageBrowseButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>eventImageBrowseData()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>735</x>
+     <y>122</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>802</x>
+     <y>123</y>
     </hint>
    </hints>
   </connection>

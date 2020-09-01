@@ -5,9 +5,15 @@ if hasattr(sys, 'frozen'):
     os.environ['PATH'] = sys._MEIPASS + ";" + os.environ['PATH']
 from openpyxl import load_workbook
 from mainUI import Ui_MainWindow
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtCore import QTimer
 from time import sleep
+
+from splashScreen import Ui_SplashScreen
+
+## GLOBALS
+counter = 0
 
 class App():
     def readFile(self,file):
@@ -169,10 +175,35 @@ class AppWindow(QMainWindow, Ui_MainWindow):
     def eventExportUnsoldReport(self):
         App.exportUnsoldReport(App)
 
+class splashWindow(QMainWindow, Ui_SplashScreen):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_SplashScreen()
+        self.ui.setupUi(self)
+        self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+
+        self.timer = QTimer(self)
+        self.timer.start(35)
+        self.timer.timeout.connect(self.progress)
+        self.show()
+
+    def progress(self):
+        global counter
+        self.ui.progressBar.setValue(counter)
+
+        if counter > 100:
+            self.timer.stop()
+            self.main = AppWindow()
+            self.main.show()
+            self.close()
+        
+        counter += 2
+
+
 if __name__ == "__main__":
     App.wbRef = None
     App.bIsSearchComplete = False
     app = QApplication(sys.argv)
-    win = AppWindow()
-    win.show()
+    win = splashWindow()
     sys.exit(app.exec_())

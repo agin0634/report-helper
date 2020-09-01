@@ -2,25 +2,52 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>805</width>
-    <height>365</height>
+    <width>500</width>
+    <height>400</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>3000</width>
+    <height>3000</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Report Helper</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(68, 68, 68);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(67, 67, 67);</string>
+   </property>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
       <x>9</x>
       <y>9</y>
-      <width>781</width>
-      <height>311</height>
+      <width>481</width>
+      <height>341</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -37,7 +64,7 @@
          <rect>
           <x>10</x>
           <y>11</y>
-          <width>761</width>
+          <width>461</width>
           <height>41</height>
          </rect>
         </property>
@@ -50,6 +77,9 @@
              <height>0</height>
             </size>
            </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
+           </property>
            <property name="text">
             <string>Source Path</string>
            </property>
@@ -59,10 +89,26 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="excellineEdit"/>
+          <widget class="QLineEdit" name="excellineEdit">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(42, 42, 42);
+border-style:none;
+color: rgb(255, 255, 255);</string>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QPushButton" name="excelBrowseButton">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(98, 98, 98);</string>
+           </property>
            <property name="text">
             <string>Browse</string>
            </property>
@@ -85,7 +131,7 @@
          <rect>
           <x>10</x>
           <y>0</y>
-          <width>761</width>
+          <width>461</width>
           <height>41</height>
          </rect>
         </property>
@@ -98,6 +144,9 @@
              <height>0</height>
             </size>
            </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
+           </property>
            <property name="text">
             <string>Image Path</string>
            </property>
@@ -107,12 +156,90 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="imagelineEdit"/>
+          <widget class="QLineEdit" name="imagelineEdit">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(42, 42, 42);
+border-style:none;
+color: rgb(255, 255, 255);</string>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QPushButton" name="imageBrowseButton">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(98, 98, 98);</string>
+           </property>
            <property name="text">
             <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="Line" name="line">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>479</width>
+          <height>3</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox{
+    border: 1px solid gray; 
+	margin-top:7px;
+}
+
+QGroupBox::title { 
+	subcontrol-origin: margin;
+	color: rgb(255, 255, 255);
+     subcontrol-position: top center; /* position at the top left*/ 
+     padding:0 3px;
+ } </string>
+       </property>
+       <property name="title">
+        <string>Properties</string>
+       </property>
+       <widget class="QWidget" name="verticalLayoutWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>441</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QPushButton" name="searchButton">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(98, 98, 98);</string>
+           </property>
+           <property name="text">
+            <string>Search</string>
            </property>
           </widget>
          </item>
@@ -121,100 +248,53 @@
       </widget>
      </item>
      <item>
-      <widget class="Line" name="line">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="styleSheet">
+        <string notr="true">QGroupBox{
+    border: 1px solid gray; 
+	margin-top:7px;
+}
+
+QGroupBox::title { 
+	subcontrol-origin: margin;
+	color: rgb(255, 255, 255);
+     subcontrol-position: top center; /* position at the top left*/ 
+     padding:0 3px;
+ } </string>
        </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QWidget" name="widget_3" native="true">
-       <widget class="QWidget" name="horizontalLayoutWidget_3">
+       <property name="title">
+        <string>Export</string>
+       </property>
+       <widget class="QWidget" name="verticalLayoutWidget_3">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>761</width>
-          <height>141</height>
+          <x>20</x>
+          <y>20</y>
+          <width>441</width>
+          <height>71</height>
          </rect>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
-          <widget class="QGroupBox" name="groupBox">
-           <property name="title">
-            <string>Properties</string>
+          <widget class="QPushButton" name="exportSoldButton">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(98, 98, 98);</string>
            </property>
-           <widget class="QWidget" name="verticalLayoutWidget_4">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>20</y>
-              <width>221</width>
-              <height>111</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_4">
-             <item>
-              <widget class="QWidget" name="widget" native="true"/>
-             </item>
-             <item>
-              <widget class="QPushButton" name="searchButton">
-               <property name="text">
-                <string>Search</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </widget>
-         </item>
-         <item>
-          <widget class="QFrame" name="frame_5">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
+           <property name="text">
+            <string>Export Sold Report</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QGroupBox" name="groupBox_2">
-           <property name="title">
-            <string>Export</string>
+          <widget class="QPushButton" name="exportUnsoldButton">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(98, 98, 98);</string>
            </property>
-           <widget class="QWidget" name="verticalLayoutWidget_3">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>20</y>
-              <width>221</width>
-              <height>111</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_3">
-             <item>
-              <widget class="QPushButton" name="exportSoldButton">
-               <property name="text">
-                <string>Export Sold Report</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="exportUnsoldButton">
-               <property name="text">
-                <string>Export unsold Report</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
+           <property name="text">
+            <string>Export unsold Report</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -229,7 +309,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>805</width>
+     <width>500</width>
      <height>21</height>
     </rect>
    </property>
@@ -245,11 +325,11 @@
    <slot>eventExportSoldReport()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>713</x>
-     <y>231</y>
+     <x>469</x>
+     <y>318</y>
     </hint>
     <hint type="destinationlabel">
-     <x>793</x>
+     <x>499</x>
      <y>234</y>
     </hint>
    </hints>
@@ -261,11 +341,11 @@
    <slot>eventExportUnsoldReport()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>703</x>
-     <y>275</y>
+     <x>469</x>
+     <y>352</y>
     </hint>
     <hint type="destinationlabel">
-     <x>791</x>
+     <x>499</x>
      <y>286</y>
     </hint>
    </hints>
@@ -277,8 +357,8 @@
    <slot>eventSearch()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>111</x>
-     <y>306</y>
+     <x>113</x>
+     <y>229</y>
     </hint>
     <hint type="destinationlabel">
      <x>7</x>
@@ -293,11 +373,11 @@
    <slot>eventExcelBrowseData()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>757</x>
-     <y>72</y>
+     <x>479</x>
+     <y>73</y>
     </hint>
     <hint type="destinationlabel">
-     <x>791</x>
+     <x>499</x>
      <y>66</y>
     </hint>
    </hints>
@@ -309,11 +389,11 @@
    <slot>eventImageBrowseData()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>735</x>
-     <y>122</y>
+     <x>479</x>
+     <y>128</y>
     </hint>
     <hint type="destinationlabel">
-     <x>802</x>
+     <x>499</x>
      <y>123</y>
     </hint>
    </hints>
